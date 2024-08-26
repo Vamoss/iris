@@ -16,6 +16,8 @@
     "express": "^4.19.2"
   },
   "devDependencies": {
+    "@google-cloud/vision": "^4.3.2",
+    "color.js": "^1.2.0",
     "concurrently": "^8.2.2",
     "typescript": "^5.5.4"
   }

@@ -1,0 +1,102 @@
+[
+  {
+    "color": {
+      "red": 171,
+      "green": 134,
+      "blue": 213,
+      "alpha": null
+    },
+    "score": 0.2809882164001465,
+    "pixelFraction": 0.024395061656832695
+  },
+  {
+    "color": {
+      "red": 171,
+      "green": 146,
+      "blue": 190,
+      "alpha": null
+    },
+    "score": 0.10906568914651871,
+    "pixelFraction": 0.05955555662512779
+  },
+  {
+    "color": {
+      "red": 232,
+      "green": 229,
+      "blue": 232,
+      "alpha": null
+    },
+    "score": 0.027980485931038857,
+    "pixelFraction": 0.5777778029441833
+  },
+  {
+    "color": {
+      "red": 148,
+      "green": 110,
+      "blue": 189,
+      "alpha": null
+    },
+    "score": 0.13116469979286194,
+    "pixelFraction": 0.012197530828416348
+  },
+  {
+    "color": {
+      "red": 169,
+      "green": 144,
+      "blue": 209,
+      "alpha": null
+    },
+    "score": 0.09453199803829193,
+    "pixelFraction": 0.020395061001181602
+  },
+  {
+    "color": {
+      "red": 202,
+      "green": 183,
+      "blue": 225,
+      "alpha": null
+    },
+    "score": 0.07495769113302231,
+    "pixelFraction": 0.05901234596967697
+  },
+  {
+    "color": {
+      "red": 140,
+      "green": 111,
+      "blue": 152,
+      "alpha": null
+    },
+    "score": 0.06417832523584366,
+    "pixelFraction": 0.02854320965707302
+  },
+  {
+    "color": {
+      "red": 142,
+      "green": 115,
+      "blue": 177,
+      "alpha": null
+    },
+    "score": 0.02396567165851593,
+    "pixelFraction": 0.005530864000320435
+  },
+  {
+    "color": {
+      "red": 203,
+      "green": 196,
+      "blue": 207,
+      "alpha": null
+    },
+    "score": 0.02158276177942753,
+    "pixelFraction": 0.08528394997119904
+  },
+  {
+    "color": {
+      "red": 199,
+      "green": 175,
+      "blue": 240,
+      "alpha": null
+    },
+    "score": 0.02103704772889614,
+    "pixelFraction": 0.007506172638386488
+  }
+]

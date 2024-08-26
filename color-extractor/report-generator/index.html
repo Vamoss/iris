@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Color Extractor</title>
+    <style>
+        /* Estilos básicos para organização */
+        .img-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .img-preview img {
+            width: 150px;
+            margin-right: 20px;
+        }
+        .color-preview {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: 20px;
+        }
+        .color-block {
+            width: 30px;
+            height: 30px;
+            margin: 2px;
+            border: 1px solid #000;
+        }
+        .json-preview {
+            white-space: pre-wrap;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div id="image-container"></div>
+    <script src="https://unpkg.com/color.js@1.2.0/dist/color.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

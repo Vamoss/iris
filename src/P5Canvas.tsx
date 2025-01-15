@@ -1,5 +1,9 @@
 import React, { useRef, useEffect } from 'react';
 import p5 from 'p5';
+interface ImageData {
+  image: string;
+  colors: [number, number, number][];
+}
 
 const P5Canvas: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(document.createElement('div'));
@@ -11,9 +15,16 @@ const P5Canvas: React.FC = () => {
       const COLOR_VARIATION = 0.005;
       const COUNTOUR_REGULARITY = 1;
       const SEGMENTS = 400;
-      const colors = ["#b4368f", "#33151e", "#434f83", "#ef99dc", "#421430"].map(c => p.color(c));
 
       let centerX: number, centerY: number;
+      let data: ImageData[] = [];
+      let colors: p5.Color[] = [];
+      let current = -1;
+      let clearAlpha = -1;
+
+      p.preload = () => {
+        data = p.loadJSON('data.json') as ImageData[];
+      };
 
       p.setup = () => {
         p.createCanvas(window.innerWidth, window.innerHeight).parent(containerRef.current);
@@ -21,6 +32,7 @@ const P5Canvas: React.FC = () => {
         p.strokeWeight(4);
         centerX = p.width / 2;
         centerY = p.height / 2;
+        next();
       };
 
       p.draw = () => {
@@ -45,6 +57,19 @@ const P5Canvas: React.FC = () => {
           p.vertex(point.x, point.y);
         }
         p.endShape();
+
+        
+        if(clearAlpha > -1){
+          clearAlpha += 5;
+          p.background(255, clearAlpha);
+        }
+        if(clearAlpha >= 255){
+          changeColor();
+        }
+
+        if (p.frameCount == 30 * 60) {
+          next();
+        }
       };
 
       p.windowResized = () => {
@@ -52,6 +77,10 @@ const P5Canvas: React.FC = () => {
         centerX = p.width / 2;
         centerY = p.height / 2;
       };
+
+      p.keyPressed = () => {
+        next();
+      }
 
       // Utility function for circular noise
       function pointForIndex(
@@ -87,6 +116,23 @@ const P5Canvas: React.FC = () => {
           p.green(colors[i]) + percent * (p.green(colors[i + 1]) - p.green(colors[i])),
           p.blue(colors[i]) + percent * (p.blue(colors[i + 1]) - p.blue(colors[i]))
         );
+      }
+
+      function next() {
+        if(current == -1)
+          changeColor();
+        else {
+          clearAlpha = 0;
+        }
+      }
+
+      function changeColor() {
+        clearAlpha = -1;
+        p.frameCount = 0;
+        current++;
+        if(current >= data.length)
+          current = 0;
+        colors = data[current].colors.map((c: number[]) => p.color(c[0], c[1], c[2]));
       }
     };
 
